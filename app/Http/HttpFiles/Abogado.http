@@ -1,0 +1,38 @@
+### index()
+GET http://127.0.0.1:8000/api/abogados
+Accept: application/json
+
+### show()
+GET http://127.0.0.1:8000/api/abogados/32
+Accept: application/json
+
+### store()
+POST http://127.0.0.1:8000/api/abogados
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre":"Test",
+    "apellido":"Prueba",
+    "matricula":"T35T34ND0C3",
+    "email":"te_testeoTE@gmail.com",
+    "password":"Pepito1253",
+    "fecha_nacimiento":"2023-05-01",
+    "telefono":"341548785",
+    "domicilio":"Calle falsa 123",
+    "especialidad":"Civil"
+}
+
+### update()
+PUT http://127.0.0.1:8000/api/abogados/31
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre":"Test",
+    "apellido":"Testing"
+}
+
+### update()
+DELETE  http://127.0.0.1:8000/api/abogados/32
+Accept: application/json
