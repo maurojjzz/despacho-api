@@ -3,45 +3,50 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Abogado;
+use App\Models\Agenda;
 use Illuminate\Http\Request;
+use App\Http\Resources\AgendaResource;
 
 class AgendaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+   
+    public function index(Abogado $abogado)
     {
-        //
+
+        $agendas = $abogado->agendas()->get();
+
+        return AgendaResource::collection($agendas) ;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+   
+    public function store(Request $request, Abogado $abogado)
     {
-        //
+
+        $validated = $request->validate([
+            'fecha_hora_inicio' => 'required|dateTime', 
+            'duracion' => 'required|time',
+            'estado' => 'required|string|in:pendiente,confirmado,cancelado',
+        ]);
+
+        $agenda = $abogado->agendas()->create($validated);
+
+        return new AgendaResource($agenda);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function show(Agenda $agenda, Abogado $abogado)
     {
-        //
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
         //

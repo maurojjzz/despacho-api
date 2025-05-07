@@ -3,7 +3,7 @@ GET http://127.0.0.1:8000/api/abogados
 Accept: application/json
 
 ### show()
-GET http://127.0.0.1:8000/api/abogados/32
+GET http://127.0.0.1:8000/api/abogados/33
 Accept: application/json
 
 ### store()
@@ -33,6 +33,6 @@ Content-Type: application/json
     "apellido":"Testing"
 }
 
-### update()
-DELETE  http://127.0.0.1:8000/api/abogados/32
+### delete()
+DELETE  http://127.0.0.1:8000/api/abogados/34
 Accept: application/json

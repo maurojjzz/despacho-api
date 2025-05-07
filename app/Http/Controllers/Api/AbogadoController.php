@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Abogado;
+use App\Http\Resources\AbogadoResource;
 use Illuminate\Http\Request;
 
 class AbogadoController extends Controller
 {
     public function index()
     {
-        $abogados= Abogado::all();
-        return $abogados;
+        return AbogadoResource::collection(Abogado::with('agendas')->get());
     }
 
     public function store(Request $request)
@@ -27,15 +27,15 @@ class AbogadoController extends Controller
                 'telefono' => 'nullable|string',
                 'domicilio' => 'nullable|string',
                 'especialidad' => 'nullable|string',
-                
+
             ])
         );
-        return $abogado;
+        return new AbogadoResource($abogado);
     }
 
     public function show(Abogado $abogado)
     {
-        return $abogado;
+        return new AbogadoResource($abogado->load('agendas'));
     }
 
     public function update(Request $request, Abogado $abogado)
@@ -52,14 +52,14 @@ class AbogadoController extends Controller
                 'domicilio' => 'nullable|string',
                 'especialidad' => 'nullable|string',
             ])
-            );
-        return $abogado;
+        );
+        return new AbogadoResource($abogado);
     }
 
     public function destroy(Abogado $abogado)
     {
         $abogado->delete();
-        
-        return response(status:204);
-    }
+
+        return response()->json(["message" => "Abogado eliminado correctamente"], 204);   
+     }
 }

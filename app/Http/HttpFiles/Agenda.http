@@ -1,0 +1,14 @@
+### index()
+GET http://127.0.0.1:8000/api/abogados/1/agendas
+Accept: application/json
+
+
+### store()
+POST http://127.0.0.1:8000/api/abogados/31/agendas
+Accept: application/json
+
+{
+    "fecha_hora_inicio":"2025-05-08 10:30:00",
+    "duracion":"02:00:00",
+    "estado":"confirmado"
+}
