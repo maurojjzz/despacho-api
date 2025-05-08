@@ -3,7 +3,7 @@ GET http://127.0.0.1:8000/api/abogados
 Accept: application/json
 
 ### show()
-GET http://127.0.0.1:8000/api/abogados/33
+GET http://127.0.0.1:8000/api/abogados/31
 Accept: application/json
 
 ### store()

@@ -1,14 +1,30 @@
 ### index()
-GET http://127.0.0.1:8000/api/abogados/1/agendas
+GET http://127.0.0.1:8000/api/abogados/31/agendas
 Accept: application/json
 
 
 ### store()
 POST http://127.0.0.1:8000/api/abogados/31/agendas
-Accept: application/json
+Content-Type: : application/json
 
 {
     "fecha_hora_inicio":"2025-05-08 10:30:00",
     "duracion":"02:00:00",
     "estado":"confirmado"
 }
+
+### show()
+GET http://127.0.0.1:8000/api/abogados/31/agendas/50
+Accept: application/json
+
+
+### update()
+PUT http://127.0.0.1:8000/api/abogados/31/agendas/50
+Content-Type: : application/json
+
+{
+    "estado":"pendiente"
+}
+
+### destroy()
+DELETE http://127.0.0.1:8000/api/abogados/31/agendas/50
