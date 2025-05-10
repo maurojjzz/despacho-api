@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\CanLoadRelationships;
 use App\Models\Abogado;
 use App\Models\Agenda;
 use Illuminate\Http\Request;
@@ -10,11 +11,14 @@ use App\Http\Resources\AgendaResource;
 
 class AgendaController extends Controller
 {
+    use CanLoadRelationships;
+
+    private array $relationships = ['abogado'];
 
     public function index(Abogado $abogado)
     {
 
-        $agendas = $abogado->agendas()->get();
+        $agendas = $this->loadRelationships($abogado->agendas())->get();
 
         return AgendaResource::collection($agendas);
     }
@@ -29,7 +33,8 @@ class AgendaController extends Controller
             'estado' => 'required|string',
         ]);
 
-        $agenda = $abogado->agendas()->create($validated);
+        $agenda = $this->loadRelationships($abogado->agendas()->create($validated));
+        ;
 
         return new AgendaResource($agenda);
     }
@@ -37,13 +42,13 @@ class AgendaController extends Controller
 
     public function show(Abogado $abogado, $agendaId)
     {
-        $agenda = $abogado->agendas()->where('id', $agendaId)->get();
+        $agenda = $abogado->agendas()->where('id', $agendaId)->first();
 
-        if ($agenda->isEmpty()) {
+        if (!$agenda) {
             return response()->json(['message' => 'Agenda no encontrada para este abogado'], 404);
         }
 
-        return AgendaResource::collection($agenda);
+        return new AgendaResource($this->loadRelationships($agenda));
     }
 
 

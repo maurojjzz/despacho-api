@@ -3,15 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\CanLoadRelationships;
 use App\Models\Abogado;
 use App\Http\Resources\AbogadoResource;
 use Illuminate\Http\Request;
 
 class AbogadoController extends Controller
 {
+    use CanLoadRelationships;
+
+    private array $relations = ['agendas'];
+
+
     public function index()
     {
-        return AbogadoResource::collection(Abogado::with('agendas')->get());
+        $query = $this->loadRelationships(Abogado::query());
+
+        return AbogadoResource::collection($query->latest()->get());
     }
 
     public function store(Request $request)
@@ -30,13 +38,14 @@ class AbogadoController extends Controller
 
             ])
         );
-        return new AbogadoResource($abogado);
+        return new AbogadoResource($this->loadRelationships($abogado));
     }
 
     public function show(Abogado $abogado)
     {
-        return new AbogadoResource($abogado->load('agendas'));
+        return new AbogadoResource($this->loadRelationships($abogado));
     }
+
 
     public function update(Request $request, Abogado $abogado)
     {
@@ -53,13 +62,13 @@ class AbogadoController extends Controller
                 'especialidad' => 'nullable|string',
             ])
         );
-        return new AbogadoResource($abogado);
+        return new AbogadoResource($this->loadRelationships($abogado));
     }
 
     public function destroy(Abogado $abogado)
     {
         $abogado->delete();
 
-        return response()->json(["message" => "Abogado eliminado correctamente"], 204);   
-     }
+        return response()->json(["message" => "Abogado eliminado correctamente"], 204);
+    }
 }
