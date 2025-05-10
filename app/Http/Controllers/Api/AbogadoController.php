@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Traits\CanLoadRelationships;
 use App\Models\Abogado;
-use App\Http\Resources\AbogadoResource;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\AbogadoResource;
+use App\Http\Traits\CanLoadRelationships;
 
 class AbogadoController extends Controller
 {
@@ -14,6 +15,10 @@ class AbogadoController extends Controller
 
     private array $relations = ['agendas'];
 
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
 
     public function index()
     {
@@ -24,20 +29,21 @@ class AbogadoController extends Controller
 
     public function store(Request $request)
     {
-        $abogado = Abogado::create(
-            $request->validate([
-                'nombre' => 'required|string|min:3|max:60',
-                'apellido' => 'required|string|min:1|max:60',
-                'matricula' => 'required|string',
-                'email' => 'required|email',
-                'password' => 'required|string|min:8|max:60',
-                'fecha_nacimiento' => 'required|date',
-                'telefono' => 'nullable|string',
-                'domicilio' => 'nullable|string',
-                'especialidad' => 'nullable|string',
+        $validatedData = $request->validate([
+            'nombre' => 'required|string|min:3|max:60',
+            'apellido' => 'required|string|min:1|max:60',
+            'matricula' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|max:60',
+            'fecha_nacimiento' => 'required|date',
+            'telefono' => 'nullable|string',
+            'domicilio' => 'nullable|string',
+            'especialidad' => 'nullable|string',
+        ]);
 
-            ])
-        );
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        $abogado = Abogado::create($validatedData);
         return new AbogadoResource($this->loadRelationships($abogado));
     }
 

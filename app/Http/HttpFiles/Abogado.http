@@ -2,6 +2,7 @@
 GET http://127.0.0.1:8000/api/abogados?include=agendas
 Accept: application/json
 
+
 ### show()
 GET http://127.0.0.1:8000/api/abogados/31
 Accept: application/json
@@ -10,6 +11,7 @@ Accept: application/json
 POST http://127.0.0.1:8000/api/abogados
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer 4|PvjIVL5ByjaKustvfFrKrzIviZhYEL6CyAz1IGq5d99dc892
 
 {
     "nombre":"Test",
