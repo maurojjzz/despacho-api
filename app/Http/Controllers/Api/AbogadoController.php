@@ -8,16 +8,18 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\AbogadoResource;
 use App\Http\Traits\CanLoadRelationships;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class AbogadoController extends Controller
 {
-    use CanLoadRelationships;
+    use CanLoadRelationships, AuthorizesRequests ;
 
     private array $relations = ['agendas'];
 
     public function __construct()
     {
         $this->middleware('auth:sanctum');
+        $this->authorizeResource(Abogado::class, 'abogado');
     }
 
     public function index()
