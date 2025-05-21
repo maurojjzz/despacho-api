@@ -1,0 +1,16 @@
+### index
+GET http://127.0.0.1:8000/api/valor_historico_jus
+Accept: application/json
+# Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+### store
+POST http://127.0.0.1:8000/api/valor_historico_jus
+Accept: application/json
+Content-Type: application/json
+# Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+{
+    "fecha_desde":"2025-04-10",
+    "valor_JUS":"1500"
+}
+ 
