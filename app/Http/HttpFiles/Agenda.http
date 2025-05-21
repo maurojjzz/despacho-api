@@ -14,7 +14,7 @@ Content-Type: : application/json
 }
 
 ### show()
-GET http://127.0.0.1:8000/api/abogados/30/agendas/1
+GET http://127.0.0.1:8000/api/abogados/1/agendas/1
 Accept: application/json
 
 

@@ -1,7 +1,7 @@
 ### index()
 GET http://127.0.0.1:8000/api/abogados?include=agendas
 Accept: application/json
-Authorization: Bearer 8|LtgMFAfVcdJpNazlBfHna0ECe8lEPdC8BLrJPLqA519b3d4f
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
 
 
 ### show()

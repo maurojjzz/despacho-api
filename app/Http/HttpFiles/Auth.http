@@ -4,8 +4,8 @@ Content-Type: : application/json
 Accept: application/json
 
 {
-    "email":"te_testeoTE@gmail.com",
-    "password":"Pepito1253"
+    "email":"sdare@example.org",
+    "password":"password"
 }
 
 ### logout

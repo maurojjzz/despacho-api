@@ -1,0 +1,51 @@
+### index()
+GET http://127.0.0.1:8000/api/clientes
+Accept: application/json
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+
+### create client
+
+POST http://127.0.0.1:8000/api/clientes
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+{
+    "nombre":"Chappell",
+    "apellido":"Roan",
+    "dni":"65986535",
+    "email":"kneedeep@passengerseat.com",
+    "fecha_nacimiento":"2001-05-01",
+    "telefono":"348874785",
+    "domicilio":"California 21"
+}
+
+### find client by id
+
+GET http://127.0.0.1:8000/api/clientes/22
+Accept: application/json
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+
+
+### update client
+PUT http://127.0.0.1:8000/api/clientes/21
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+
+{
+    "nombre":"Chappella"
+
+}
+
+
+### delete cliente
+
+DELETE http://127.0.0.1:8000/api/clientes/23
+Accept: application/json
+Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+
+
