@@ -1,0 +1,37 @@
+### index
+GET http://127.0.0.1:8000/api/expedientes
+Accept: application/json
+Authorization:Bearer 1|VFUkTzEU2QDvtzpgPttP3JVy1NG2fUmQF9V1tRMcc7ee9b45
+
+
+### create
+POST http:/127.0.0.1:8000/api/expedientes
+Accept: application/json
+Content-Type: application/json
+Authorization:Bearer 1|VFUkTzEU2QDvtzpgPttP3JVy1NG2fUmQF9V1tRMcc7ee9b45
+
+{
+    "formato":"pdf",
+    "fecha_hora_subida":"2025-05-21 18:20:00",
+    "url":"elrincondelvagoahre.com"
+}
+
+### show
+GET http:/127.0.0.1:8000/api/expedientes/22
+Accept: application/json
+Authorization:Bearer 1|VFUkTzEU2QDvtzpgPttP3JVy1NG2fUmQF9V1tRMcc7ee9b45
+
+### update
+PUT http:/127.0.0.1:8000/api/expedientes/21
+Accept: application/json
+Content-Type: application/json 
+Authorization:Bearer 1|VFUkTzEU2QDvtzpgPttP3JVy1NG2fUmQF9V1tRMcc7ee9b45
+
+{
+    "formato":"jpg"
+}
+
+### destroy
+DELETE http:/127.0.0.1:8000/api/expedientes/21
+Accept: application/json
+Authorization:Bearer 1|VFUkTzEU2QDvtzpgPttP3JVy1NG2fUmQF9V1tRMcc7ee9b45
