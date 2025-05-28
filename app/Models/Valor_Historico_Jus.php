@@ -9,5 +9,6 @@ class Valor_Historico_Jus extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['fecha_desde', 'valor_JUS'];
+
 }

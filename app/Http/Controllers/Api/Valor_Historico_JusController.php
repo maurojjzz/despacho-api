@@ -35,7 +35,7 @@ class Valor_Historico_JusController extends Controller
     {
         $validatedData = $request->validate([
             'fecha_desde' => 'required|date_format:Y-m-d H:i:s',
-            'valor_JUS' => 'required|decimal'
+            'valor_JUS' => 'required|decimal:0,2'
         ]);
         $valor_historico_jus = Valor_Historico_Jus::create($validatedData);
         return new Valor_Historico_JusResource($this->loadRelationships($valor_historico_jus));
