@@ -1,0 +1,32 @@
+### index
+GET http:/127.0.0.1:8000/api/tipo_eventos
+Accept: application/json
+
+###store
+POST http:/127.0.0.1:8000/api/tipo_eventos
+Accept: application/json
+Content-Type: application/json
+
+{
+    "descripcion": "Nueva Yorkn't",
+    "cantidad_JUS": 10
+}
+
+### show
+GET http:/127.0.0.1:8000/api/tipo_eventos/11
+Accept: application/json
+
+### update 
+PUT http:/127.0.0.1:8000/api/tipo_eventos/11
+Accept: application/json
+Content-Type: application/json
+
+{
+    "descripcion": "Porkshiore",
+    "cantidad_JUS": 15
+}
+
+### destroy
+DELETE http:/127.0.0.1:8000/api/tipo_eventos/11
+Accept: application/json
+

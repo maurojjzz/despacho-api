@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ExpedienteSeeder::class);
         $this->call(Valor_Historico_JusSeeder::class);
         $this->call(AsistenteSeeder::class);
+        $this->call(TipoEventoSeeder::class);
 
     }
 }
