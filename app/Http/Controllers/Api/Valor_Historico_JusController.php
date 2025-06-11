@@ -14,11 +14,11 @@ class Valor_Historico_JusController extends Controller
 
     use CanLoadRelationships, AuthorizesRequests;
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:sanctum');
-    //     $this->authorizeResource(Expediente::class, 'expediente');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+        $this->authorizeResource(Valor_Historico_Jus::class, 'valor_historico_jus');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -44,6 +44,7 @@ class Valor_Historico_JusController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(Valor_Historico_Jus $valor_historico_jus)
     {
         return new Valor_Historico_JusResource($this->loadRelationships($valor_historico_jus));
@@ -70,6 +71,5 @@ class Valor_Historico_JusController extends Controller
     {
         $valor_historico_jus->delete();
         return response()->json(["message" => "Valor historico Jus eliminado correctamente"], 204);
-        
     }
 }

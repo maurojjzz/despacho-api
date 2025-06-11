@@ -1,16 +1,37 @@
 ### index
 GET http://127.0.0.1:8000/api/valor_historico_jus
 Accept: application/json
-# Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+Authorization: Bearer 3|eYpGKVBubxQ88yuvCnidu0U0EFdVJFEaFgdNaIxCd3756559
 
 ### store
 POST http://127.0.0.1:8000/api/valor_historico_jus
 Accept: application/json
 Content-Type: application/json
-# Authorization: Bearer 1|V4RjGTohp07dV0WZHHEDBGQ3AzsEzlue0tuQvGkUccecb5c0
+Authorization: Bearer 3|eYpGKVBubxQ88yuvCnidu0U0EFdVJFEaFgdNaIxCd3756559
 
 {
     "fecha_desde":"2025-05-27 15:15:00",
     "valor_JUS":"1500"
 }
- 
+
+### show
+GET http://127.0.0.1:8000/api/valor_historico_jus/8
+Accept: application/json
+Authorization: Bearer 3|eYpGKVBubxQ88yuvCnidu0U0EFdVJFEaFgdNaIxCd3756559
+
+
+### update
+PUT http://127.0.0.1:8000/api/valor_historico_jus/6
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 3|eYpGKVBubxQ88yuvCnidu0U0EFdVJFEaFgdNaIxCd3756559
+
+{
+    "valor_JUS":"1500.55"
+}
+
+
+### delete
+DELETE http://127.0.0.1:8000/api/valor_historico_jus/8
+Accept: application/json
+Authorization: Bearer 3|eYpGKVBubxQ88yuvCnidu0U0EFdVJFEaFgdNaIxCd3756559

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('valor__historico__juses', function (Blueprint $table) {
             $table->id();
             $table->dateTime('fecha_desde');
-            $table->decimal('valor_JUS', 9,3);
+            $table->decimal('valor_JUS', 9,2);
             $table->timestamps();
         });
     }

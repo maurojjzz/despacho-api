@@ -17,4 +17,5 @@ Route::apiResource('abogados', AbogadoController::class);
 Route::apiResource('abogados.agendas', AgendaController::class)->scoped();
 Route::apiResource('clientes', ClienteController::class);
 Route::apiResource('expedientes', ExpedienteController::class);
-Route::apiResource('valor_historico_jus', Valor_Historico_JusController::class);
+Route::apiResource('valor_historico_jus', Valor_Historico_JusController::class)
+    ->parameters(['valor_historico_jus' => 'valor_historico_jus']);
