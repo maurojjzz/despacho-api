@@ -1,0 +1,44 @@
+### index
+GET http://127.0.0.1:8000/api/asistentes 
+Accept: application/json
+Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
+
+### store
+POST http://127.0.0.1:8000/api/asistentes 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
+
+
+{
+    "nombre":"Test",
+    "apellido":"Prueba",
+    "email":"te_testeoTE@gmail.com",
+    "usuario":"te_testeo",
+    "password":"Pepito1253",
+    "telefono":"341548785",
+    "fecha_nacimiento":"2023-05-01"
+}
+
+### show
+GET http://127.0.0.1:8000/api/asistentes/9
+Accept: application/json
+Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
+
+
+### update
+PUT http://127.0.0.1:8000/api/asistentes/9
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
+
+
+{
+    "nombre":"Wasted",
+    "apellido":"Faded"
+}
+
+### delete
+DELETE http://127.0.0.1:8000/api/asistentes/9
+Accept: application/json
+Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
