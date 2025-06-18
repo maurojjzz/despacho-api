@@ -14,11 +14,11 @@ class TipoEventoController extends Controller
 
     use CanLoadRelationships, AuthorizesRequests;
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:sanctum');
-    //     $this->authorizeResource(TipoEvento::class, 'tipo_evento');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+        $this->authorizeResource(TipoEvento::class, 'tipo_evento');
+    }
     
     public function index()
     {

@@ -1,11 +1,13 @@
 ### index
 GET http:/127.0.0.1:8000/api/tipo_eventos
 Accept: application/json
+Authorization: Bearer 1|4KTXDZkbnzwRYuQRLfThVbuKE8gE3Ou0gnHnftKGabd1172d
 
 ###store
 POST http:/127.0.0.1:8000/api/tipo_eventos
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer 1|4KTXDZkbnzwRYuQRLfThVbuKE8gE3Ou0gnHnftKGabd1172d
 
 {
     "descripcion": "Nueva Yorkn't",
@@ -13,13 +15,15 @@ Content-Type: application/json
 }
 
 ### show
-GET http:/127.0.0.1:8000/api/tipo_eventos/11
+GET http:/127.0.0.1:8000/api/tipo_eventos/10
 Accept: application/json
+Authorization: Bearer 1|4KTXDZkbnzwRYuQRLfThVbuKE8gE3Ou0gnHnftKGabd1172d
 
 ### update 
-PUT http:/127.0.0.1:8000/api/tipo_eventos/11
+PUT http:/127.0.0.1:8000/api/tipo_eventos/12
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer 1|4KTXDZkbnzwRYuQRLfThVbuKE8gE3Ou0gnHnftKGabd1172d
 
 {
     "descripcion": "Porkshiore",
@@ -27,6 +31,7 @@ Content-Type: application/json
 }
 
 ### destroy
-DELETE http:/127.0.0.1:8000/api/tipo_eventos/11
+DELETE http:/127.0.0.1:8000/api/tipo_eventos/10
 Accept: application/json
+Authorization: Bearer 1|4KTXDZkbnzwRYuQRLfThVbuKE8gE3Ou0gnHnftKGabd1172d
 
