@@ -1,0 +1,36 @@
+### index
+GET http://127.0.0.1:8000/api/casos_judiciales
+Accept: application/json
+# Authorization: Bearer 1|4JcP3zyAJmQxtj9UzZg6Tzq3hztpfW6D4wFwjm07347d6a64
+
+### store
+POST http://127.0.0.1:8000/api/casos_judiciales
+Accept: application/json
+Content-Type: application/json
+
+{
+    "fecha_hora_creacion": "2025-05-15 10:30:00",
+    "estado_caso": true,
+    "caso_total": 1560,
+    "fecha_hora_fin": "2025-05-28 15:30:00",
+    "cant_total_JUS": 8,
+    "estado_pago":false
+}
+
+### show
+GET http://127.0.0.1:8000/api/casos_judiciales/21
+Accept: application/json
+
+### update
+
+PUT http://127.0.0.1:8000/api/casos_judiciales/21
+Accept: application/json
+Content-Type: application/json
+
+{
+   "estado_pago":true 
+}
+
+### destroy
+DELETE  http://127.0.0.1:8000/api/casos_judiciales/21
+Accept: application/json

@@ -9,7 +9,7 @@ class CasoJudicial extends Model
 {
     use HasFactory;
     
-    protected $table = 'caso_judiciales';
+    protected $table = 'casos_judiciales';
 
     protected $fillable = [
         'fecha_hora_creacion',

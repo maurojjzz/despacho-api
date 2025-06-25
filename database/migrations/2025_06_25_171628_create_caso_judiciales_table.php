@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('caso_judiciales', function (Blueprint $table) {
+        Schema::create('casos_judiciales', function (Blueprint $table) {
             $table->id();
             $table->dateTime('fecha_hora_creacion');
             $table->boolean('estado_caso');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('caso_judiciales');
+        Schema::dropIfExists('casos_judiciales');
     }
 };

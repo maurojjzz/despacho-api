@@ -27,4 +27,7 @@ Route::apiResource('valor_historico_jus', Valor_Historico_JusController::class)
     ->parameters(['valor_historico_jus' => 'valor_historico_jus']);
 Route::apiResource('asistentes', AsistenteController::class);
 Route::apiResource('tipo_eventos', TipoEventoController::class);
-Route::apiResource('casos_judiciales', CasoJudicialController::class);
+Route::apiResource('casos_judiciales', CasoJudicialController::class)
+    ->parameters(['casos_judiciales' => 'caso_judicial']);;
+
+
